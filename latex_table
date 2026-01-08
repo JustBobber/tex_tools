@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+
+import argparse
+
+def main():
+	# print("latex table generator")
+	parser = argparse.ArgumentParser(description='tiny latex table generator')
+
+	parser.add_argument('--dim', nargs=2, type=int, help="table row, table columns eg. --dim 5 4")
+
+	table = "\n\\begin{table}[]\n"
+	table += "    \\begin{tabular}{"
+
+	args = parser.parse_args()
+	if args.dim:
+		rows, cols = args.dim
+		tabular_columns = "l" * cols
+		columns = " & " * (cols - 1)
+		table += tabular_columns + "}\n"
+		table += ("        " + columns + " \\\\\n") * rows
+
+	table += "    \\end{tabular}\n"
+	table += "\\end{table}\n"
+
+	print(table)
+
+
+if __name__ == "__main__":
+	main()

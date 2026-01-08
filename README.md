@@ -11,6 +11,6 @@ cd tex_tools
 
 ## Usage
 ```bash
-latex_table --dim 5 5  # or what dimensions (row column) the tabe are to have. 
+latex_table --dim 5 5  # or what dimensions (row column) the table are to have. 
 ```
 

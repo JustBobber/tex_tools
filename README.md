@@ -8,6 +8,14 @@ git clone https://github.com/justbobber/tex_tools.git
 cd tex_tools
 ./install.sh
 ```
+make sure <code>~./local/bin/</code> is in your PATH:
+```bash
+ echo $PATH | grep ".local/bin"
+```
+if not add it:
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
 
 ## Usage
 ```bash

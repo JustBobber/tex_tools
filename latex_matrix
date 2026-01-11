@@ -1,0 +1,40 @@
+#!/usr/bin/env python3 
+
+import argparse
+
+def main():
+	parser = argparse.ArgumentParser(description="tiny latex matrix generator")
+
+	parser.add_argument("--dim", nargs='+', type=int, help="takes one or to arguments 1 for n x n or 2 for m x n matrices.")
+
+	# TODO: add zero matrix
+	#		add identity matrix
+	#		add p or b matrix possibility 
+	#		add cosumer designed matrix
+
+	args = parser.parse_args()
+
+	m = n = 3
+
+	if args.dim and len(args.dim) not in [1, 2]:
+		parser.error("--dim only takes one or two arguments")
+
+	if args.dim:
+		if len(args.dim) == 1:
+			m = n = args.dim 
+
+		if len(args.dim) == 2:
+			m, n = args.dim
+
+	matrix = "\n\\begin{pmatrix}\n"
+	indent = "    "
+
+	for i in range(0, m):
+		matrix += indent + " & " * n + " \\\\" + "\n"
+
+
+	matrix += "\\end{pmatrix}\n"
+	print(matrix)
+
+if __name__ == "__main__":
+	main()

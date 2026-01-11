@@ -21,4 +21,3 @@ export PATH="$HOME/.local/bin:$PATH"
 ```bash
 latex_table --dim 5 5  # or what dimensions (row column) the table are to have. 
 ```
-
